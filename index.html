@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Parallel Days: a project proposal for choosing what to keep when a day changes.">
+  <title>Parallel Days — Project Proposal</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #213025; background: #f8f7f2; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 870px; margin: auto; padding: 42px 24px 80px; }
+    .eyebrow { color: #46664d; font-size: .78rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    h1, h2 { letter-spacing: -.04em; }
+    h1 { font-family: Georgia, serif; font-size: clamp(3rem, 8vw, 5.5rem); line-height: .98; margin: 35px 0 20px; }
+    h2 { font-size: 1.35rem; margin: 0 0 12px; }
+    p { line-height: 1.6; margin: 0; }
+    .lead { font-size: clamp(1.18rem, 3vw, 1.55rem); line-height: 1.42; max-width: 670px; }
+    .intro { border-bottom: 1px solid #ccd6c9; padding-bottom: 42px; }
+    section { padding: 28px 0; border-bottom: 1px solid #d8dfd5; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .label { color: #46664d; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+    ul { margin: 0; padding-left: 1.25rem; line-height: 1.65; }
+    li + li { margin-top: 5px; }
+    .quote { padding: 16px 18px; background: #edf1e8; border-left: 3px solid #749276; }
+    .quote + .quote { margin-top: 10px; }
+    .quote p { font-style: italic; }
+    .quote cite { display: block; margin-top: 6px; color: #516554; font-size: .84rem; font-style: normal; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+    .step { background: #edf1e8; padding: 16px; min-height: 120px; }
+    .step strong { display: block; margin-bottom: 8px; }
+    .muted { color: #4c6252; }
+    footer { padding-top: 23px; font-size: .85rem; color: #4c6252; }
+    @media (max-width: 640px) { .grid, .steps { grid-template-columns: 1fr; } main { padding-top: 28px; } .step { min-height: 0; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="intro">
+      <p class="eyebrow">Design, Build, Ship · Project Proposal</p>
+      <h1>Parallel Days</h1>
+      <p class="lead">For graduate students whose plans change mid-day, Parallel Days shows feasible ways forward and makes the cost of each choice visible.</p>
+    </header>
+
+    <section class="grid" aria-labelledby="problem-title">
+      <div>
+        <h2 id="problem-title">The problem</h2>
+        <p>When a class runs late or a task takes longer than expected, a morning plan no longer fits. The hard part is deciding what to protect and what to postpone.</p>
+      </div>
+      <div>
+        <h2>Who it is for</h2>
+        <p>Graduate students balancing fixed commitments, coursework, longer projects, and personal time.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="research-title">
+      <h2 id="research-title">What potential users told me</h2>
+      <div class="quote"><p>“I knew I couldn't finish everything, but I wasn't sure what to sacrifice first.”</p><cite>Computer science graduate student</cite></div>
+      <div class="quote"><p>“I usually just make decisions in my head. It's hard to see how one delay affects everything else.”</p><cite>Business graduate student</cite></div>
+      <div class="quote"><p>“When something takes longer than expected, I wish I could quickly compare my options instead of rebuilding my schedule manually.”</p><cite>Engineering graduate student</cite></div>
+    </section>
+
+    <section aria-labelledby="experience-title">
+      <h2 id="experience-title">The experience</h2>
+      <div class="steps">
+        <div class="step"><strong>1 · Choose</strong><p>Enter today's fixed events, priorities, and protected time. Compare feasible plans and choose one.</p></div>
+        <div class="step"><strong>2 · Replan</strong><p>When time is lost, record what actually happened. Compare what each new plan preserves or postpones.</p></div>
+        <div class="step"><strong>3 · Continue</strong><p>Confirm a revised plan and return to it later. A draft never silently replaces a chosen plan.</p></div>
+      </div>
+    </section>
+
+    <section class="grid" aria-labelledby="focus-title">
+      <div>
+        <h2 id="focus-title">Focus: Design</h2>
+        <p>I will go deep on the decision flow: clear comparisons, honest states, accessible timelines, and an understandable account of what changed.</p>
+      </div>
+      <div>
+        <h2>How I will know it works</h2>
+        <p>In a live test, someone can recover from a disrupted plan and explain what their new choice keeps and postpones without my help.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="roadmap-title">
+      <h2 id="roadmap-title">Roadmap</h2>
+      <div class="grid">
+        <div><p class="label">November 10–17 · v1</p><p>Interview users. Build real accounts, saved data, manual day input, two feasible plans, and an end-to-end revised choice after lost time.</p></div>
+        <div><p class="label">November 18–23</p><p>Watch people use v1. Refine the comparison and the explanation of what each choice changes.</p></div>
+        <div><p class="label">November 25–December 1 · v2</p><p>Add a second interruption type and a visual history of the original plan, the disruption, and the chosen response.</p></div>
+        <div><p class="label">Beyond the fair</p><p>Explore calendar sync, notifications, and model-assisted planning after the core decision flow works.</p></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="tools-title">
+      <h2 id="tools-title">Stack and tools</h2>
+      <p>Next.js and TypeScript for the web app and constraint checks; Clerk for sign-in; Supabase for private user data; Vercel for hosting. I will use the Clerk CLI for auth setup, Supabase CLI and MCP for database work, and Vercel CLI for deployment.</p>
+    </section>
+
+    <footer>Parallel Days · MPCS 51238 · Autumn 2026</footer>
+  </main>
+</body>
+</html>
